@@ -6,12 +6,12 @@ import { WordleGuesser } from "./wordleguesser.js";
 window.word_pointer = 1;
 window.letter_pointer = 1;
 
-let wordle = new WordleGuesser();
-
 /**
  * Function used for setting letterboxes to their default state. Also used to reset state.
  */
 function loadLetterboxes() {
+    // Initialize new WordleGuesser on startup / resets
+    window.guesser = new WordleGuesser();
     let letterboxList = document.getElementsByClassName("letterbox");
 
     // Sets data and parameters for letterbox to original state. setLetterboxDefault called as this function is also used for resetting.

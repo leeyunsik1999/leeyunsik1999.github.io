@@ -49,9 +49,10 @@ export function submitWord() {
         alert("Please type in a full word!");
     } else {
         getWord();
+        let wordDict = {};
         for (let i = 1; i < 6; i++) {
             let box = document.getElementById(`${word_pointer}-${i}`);
-
+            wordDict[i] = {'letter': box.innerText.toLowerCase(), 'status': box.value};
             // Placeholder logic to interact with wordle AI that is to be implemented.
             // Case of wrong letter
             if (box.value === 1){
@@ -65,6 +66,7 @@ export function submitWord() {
             }
             box.removeEventListener("click", letterboxClick);
         }
+        guesser.process_guess(wordDict);
         word_pointer++;
         letter_pointer = 1;
     }
