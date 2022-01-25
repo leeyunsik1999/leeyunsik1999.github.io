@@ -32,7 +32,7 @@ export function setLetterboxDefault(box) {
 export function setLetterboxEntered(box, letter) {
     box.value = 1;
     box.style.backgroundColor = "#343434";
-    box.style.border = "0px";
+    box.style.border = "2px solid transparent";
     box.innerText = letter;
 }
 

@@ -1,8 +1,12 @@
 import * as utils from "./utils.js";
 
+import { WordleGuesser } from "./wordleguesser.js";
+
 // Initializing variables to keep track of which word row and which letter we are typing in.
 window.word_pointer = 1;
 window.letter_pointer = 1;
+
+let wordle = new WordleGuesser();
 
 /**
  * Function used for setting letterboxes to their default state. Also used to reset state.
