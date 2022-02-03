@@ -9,14 +9,14 @@ export class WordleGuesser {
         this.rightLetters = new Set();
 
         // Initial guess is when len is 10657. Return soare by default
-        fetch('data/allowed_guesses')
+        fetch('data/allowed_guesses.txt')
             .then(res => res.text())
             .then(text => {
                 this.guessList = text.split('\r\n');
             });
 
         // Initial guess is when len is 2315. Return soare by default
-        fetch('data/word_list')
+        fetch('data/word_list.txt')
             .then(res => res.text())
             .then(text => {
                 this.wordList = text.split('\r\n');
